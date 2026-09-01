@@ -1,0 +1,39 @@
+{
+  "hint_first_meet": "Nhập ngày tháng vào ô trống",
+  "hint_wrong_attempts": "Đó có thể là một ngày của tháng 7",
+  "hint_final": "Không còn gợi ý nữa đâu",
+  "hint_one_more": "Bấm thêm lần nữa đi",
+  "hint_winter": "Đông rồi nhớ giữ gìn sức khỏe nhé",
+  "are_you_sure": "Cậu chắc chứ?",
+  "enter_icon": "↵",
+  "yes": "Có",
+  "no": "Không",
+  "start": "Chạm để bắt đầu",
+  "dot": "...................",
+
+  "home_button": "← Home",
+  "reply_button": "Hồi đáp",
+
+  "reply_title": "Hồi đáp",
+  "reply_description": "Viết những điều cậu muốn nói.",
+  "reply_placeholder": "Viết hồi đáp của cậu ở đây...",
+  "send_reply": "Gửi hồi đáp",
+  "sending_reply": "Đang gửi...",
+  "reply_send_error": "Gửi hồi đáp thất bại.",
+
+  "reply_sent_title": "Thư đã được gửi đi!",
+  "reply_sent_description": "Đây là toàn bộ nội dung cậu vừa viết.",
+  "write_another_reply": "Viết hồi đáp khác",
+
+  "editor_bold": "B",
+  "editor_italic": "I",
+  "editor_strike": "S",
+  "editor_heading": "H",
+  "editor_bullet_list": "•",
+  "editor_ordered_list": "1.",
+  "editor_align_left": "≡",
+  "editor_align_center": "≡",
+  "editor_align_right": "≡",
+  "editor_undo": "↶",
+  "editor_redo": "↷"
+}
