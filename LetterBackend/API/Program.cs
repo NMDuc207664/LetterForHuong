@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend", policy =>
     {
         // Thay bằng domain Vercel sau khi deploy
-        policy.WithOrigins("http://localhost:5173") 
+        policy.WithOrigins("https://letter-for-huong.vercel.app") 
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
