@@ -1,0 +1,60 @@
+.minigame-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.minigame-score {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(105, 72, 163, 0.85);
+  color: #fff;
+  font-family: 'Palatino Linotype', Palatino, 'Times New Roman', serif;
+  font-size: 14px;
+}
+
+.minigame-bubble {
+  position: absolute;
+  top: -60px;
+  border: none;
+  background: none;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  pointer-events: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
+  animation-name: minigame-fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.minigame-bubble:hover {
+  transform: scale(1.15);
+}
+
+@keyframes minigame-fall {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(112vh);
+    opacity: 0.85;
+  }
+}
+
+.minigame-fade-enter-active,
+.minigame-fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.minigame-fade-enter-from,
+.minigame-fade-leave-to {
+  opacity: 0;
+}

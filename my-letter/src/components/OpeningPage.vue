@@ -101,9 +101,12 @@ import { t, type Namespace } from './utils/i18n'
 import DotLoading from './genenric/DotLoading.vue';
 import { useRouter } from 'vue-router'
 import { hintMap } from './constants/LoginBoxHintMap'
-// import { triggerFireworks } from './utils/confetti'
+import { triggerCongrat } from './utils/confetti'
 import { triggerFireworks } from './utils/fireworks.js'
- 
+import FloatingBackground from './genenric/FloatingBackground.vue'
+import HoverMinigame from './genenric/HoverMinigame.vue'
+import SoundPlayer from './genenric/SoundPlayer.vue'
+
 const props = defineProps({
   resetHintAfterTwoMoreWrong: {
     type: Boolean,
@@ -116,6 +119,7 @@ const currentLang = ref<Namespace>('vie')
 const isAudioUnlocked = ref(false)
 const showConfirmation = ref(false)
 const isShake = ref(false)
+const isMinigameOn = ref(false)
 
 const unlock = () => {
   isAudioUnlocked.value = true
@@ -163,7 +167,14 @@ const handleSubmit = (password: string) => {
         isShake.value = false
       }, 400)
     }
-    if (pastAttempts.value >= 3) {
+    if(pastAttempts.value === 3) {
+      hintText.value = t(currentLang.value, 'dot_2')
+      isShake.value = true
+       setTimeout(() => {
+        isShake.value = false
+      }, 400)
+    }
+    if (pastAttempts.value > 3) {
       showConfirmation.value = true
     }
     return
@@ -204,6 +215,19 @@ const confirm2508 = () => {
   <main class="page">
     <!-- Background -->
     <div class="background"></div>
+    <FloatingBackground />
+    <HoverMinigame :active="isMinigameOn" />
+    <SoundPlayer />
+
+    <button
+      type="button"
+      class="minigame-toggle"
+      :class="{ 'is-on': isMinigameOn }"
+      :aria-label="isMinigameOn ? t('vie', 'minigame_off') : t('vie', 'minigame_on')"
+      @click="isMinigameOn = !isMinigameOn"
+    >
+      🎮
+    </button>
 
     <!-- Overlay unlock âm thanh: ẩn ngay sau click đầu tiên -->
     <Transition name="unlock-fade">
@@ -211,6 +235,7 @@ const confirm2508 = () => {
         v-if="!isAudioUnlocked"
         class="audio-unlock-overlay"
         @click="unlock"
+        @animationend="triggerCongrat(3)"
         @touchstart.passive="unlock"
       >
         <span class="audio-unlock-hint">{{ t('vie', 'start') }}</span>

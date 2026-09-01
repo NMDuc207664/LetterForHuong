@@ -1,0 +1,47 @@
+.floating-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.floating-item {
+  position: absolute;
+  object-fit: contain;
+  animation-name: floating-drift, floating-spin;
+  animation-timing-function: ease-in-out, linear;
+  animation-iteration-count: infinite, infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes floating-drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(18px, -26px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes floating-spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+@media (max-width: 600px) {
+  .floating-item {
+    display: none;
+  }
+
+  .floating-item:nth-child(-n+8) {
+    display: block;
+  }
+}

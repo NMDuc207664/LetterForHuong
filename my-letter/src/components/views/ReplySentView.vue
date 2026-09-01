@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { t } from '../utils/i18n'
 import { REPLY_CONTENT_STORAGE_KEY } from '../constants/replyStorage'
+import SoundPlayer from './../genenric/SoundPlayer.vue'
 
 const router = useRouter()
 const savedContent = ref('')
@@ -24,6 +25,7 @@ const goHome = () => router.push({ name: 'home' })
 </script>
 
 <template>
+    <SoundPlayer />
   <main class="reply-page">
 
     <div class="reply-background"></div>

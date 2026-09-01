@@ -3,7 +3,8 @@ import type { SendReplyRequest } from '../../components/constants/SendReplyReque
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5017'
 
 // Giá trị mặc định cho From/To/Subject, chỉ Content là do người dùng nhập.
-const DEFAULT_FROM = 'Huong@sender.com'
+// "onboarding@resend.dev" là domain test của Resend, không cần verify domain riêng.
+const DEFAULT_FROM = 'onboarding@resend.dev'
 const DEFAULT_TO = 'boydbvn@gmail.com'
 const DEFAULT_SUBJECT = 'Hãy đọc tớ đi nhé!!'
 

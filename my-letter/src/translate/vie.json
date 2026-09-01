@@ -10,9 +10,23 @@
   "no": "Không",
   "start": "Chạm để bắt đầu",
   "dot": "...................",
+  "dot_2": "...",
 
   "home_button": "← Home",
   "reply_button": "Hồi đáp",
+
+  "minigame_score": "Điểm",
+  "minigame_on": "Bật minigame",
+  "minigame_off": "Tắt minigame",
+
+  "sound_on": "Bật nhạc",
+  "sound_off": "Tắt nhạc",
+  "sound_playlist": "Danh sách",
+  "sound_prev": "Bài trước",
+  "sound_next": "Bài sau",
+  "sound_interval_label": "Khoảng cách bài mới:",
+  "sound_interval_unit": "giây",
+  "sound_empty": "Chưa có bài hát nào trong thư mục sounds",
 
   "reply_title": "Hồi đáp",
   "reply_description": "Viết những điều cậu muốn nói.",

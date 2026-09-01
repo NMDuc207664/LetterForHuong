@@ -1,0 +1,142 @@
+.sound-player {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  font-family: 'Palatino Linotype', Palatino, 'Times New Roman', serif;
+}
+
+.sound-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sound-toggle {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #cbbfe0;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(60, 45, 70, 0.14);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.sound-toggle:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: #7a5ab3;
+}
+
+.sound-toggle.is-on {
+  border-color: #6b5299;
+  background: #6b5299;
+}
+
+.sound-arrow {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #cbbfe0;
+  border-radius: 50%;
+  background: #fff;
+  color: #6b5299;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.sound-arrow:hover {
+  transform: translateY(-1px);
+  border-color: #7a5ab3;
+}
+
+.sound-toggle:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.sound-expand {
+  border: 1px solid #cbbfe0;
+  border-radius: 20px;
+  padding: 8px 16px;
+  background: #fff;
+  color: #6b5299;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(60, 45, 70, 0.1);
+}
+
+.sound-empty,
+.sound-panel {
+  max-width: 240px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #fffefa;
+  border: 1px solid #c8bfd4;
+  box-shadow: 0 12px 28px rgba(60, 45, 70, 0.14);
+}
+
+.sound-empty {
+  color: #8b8580;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.sound-tracklist {
+  list-style: none;
+  max-height: 180px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+.sound-track {
+  padding: 6px 8px;
+  border-radius: 8px;
+  color: #4c4458;
+  font-size: 13px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.sound-track:hover {
+  background: rgba(107, 82, 153, 0.1);
+}
+
+.sound-track.active {
+  background: #6b5299;
+  color: #fff;
+}
+
+.sound-interval {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #4c4458;
+  font-size: 12px;
+}
+
+.sound-interval input {
+  width: 56px;
+  padding: 4px 6px;
+  border: 1px solid #c8bfd4;
+  border-radius: 6px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .sound-player {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .sound-empty,
+  .sound-panel {
+    max-width: 200px;
+  }
+}

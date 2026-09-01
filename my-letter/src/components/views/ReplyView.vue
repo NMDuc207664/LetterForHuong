@@ -6,6 +6,7 @@ import { t } from '../utils/i18n'
 import { useReplyEditor } from '../utils/useReplyEditor'
 import { sendLetter as sendReplyApi } from '../api/sendreply'
 import { REPLY_CONTENT_STORAGE_KEY } from '../constants/replyStorage'
+import SoundPlayer from './../genenric/SoundPlayer.vue'
 
 const { editor, getHTML } = useReplyEditor()
 const router = useRouter()
@@ -33,6 +34,7 @@ const sendReply = async () => {
 </script>
 
 <template>
+  <SoundPlayer />
   <main class="reply-page">
 
     <div class="reply-background"></div>

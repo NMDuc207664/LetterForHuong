@@ -243,6 +243,36 @@ body {
 }
 
 /* =========================
+   MINIGAME TOGGLE
+========================= */
+
+.minigame-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #cbbfe0;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(60, 45, 70, 0.14);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.minigame-toggle:hover {
+  transform: translateY(-1px);
+  border-color: #7a5ab3;
+}
+
+.minigame-toggle.is-on {
+  border-color: #6b5299;
+  background: #6b5299;
+}
+
+/* =========================
    MOBILE
 ========================= */
 
@@ -262,6 +292,11 @@ body {
     padding: 36px 24px 34px;
 
     border-radius: 15px;
+  }
+
+  .minigame-toggle {
+    top: 12px;
+    right: 12px;
   }
 
   .hint {
