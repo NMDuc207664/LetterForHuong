@@ -19,8 +19,10 @@ FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 
-# Khai báo port 8080 cho Koyeb nhận diện
+# Khai báo port 8080 để nền tảng PaaS nhận diện
 EXPOSE 8080
 ENV ASPNETCORE_URLS=http://+:8080
+# Tắt theo dõi thay đổi file cấu hình trong container để tránh chạm giới hạn inotify
+ENV DOTNET_HOSTBUILDER__RELOADCONFIGONCHANGE=false
 
 ENTRYPOINT ["dotnet", "API.dll"]
